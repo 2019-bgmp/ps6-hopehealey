@@ -16,3 +16,18 @@ with open(args.file, "r") as fh:
         if line.startswith('>'):
             with open(args.new_file, "a") as filed:
                 filed.write(line)
+#isolating only the k-mer length and k-mer coverage
+k_mer_leng = []
+k_mer_cover = []
+import re
+with open(args.new_file, "r") as myfile:
+    for line in myfile:
+        #line = line.strip('\n')
+        #print(line)
+        pattern = '(>)([A-Z]+)_([0-9]+)_([a-z]+)_([0-9]+)_([a-z]+)_([0-9, .]+)' #want group 5 and 7
+        result = re.search(pattern, line) #searches for my pattern in the line
+        if result:
+            k_mer_leng.append(float(result.group(5))) #isolates only the k_mer_leng and makes it a float - otherwise it loads in as a string
+            k_mer_cover.append(float(result.group(7))) #isolates only the k_mer_cover
+
+print(k_mer_leng)
