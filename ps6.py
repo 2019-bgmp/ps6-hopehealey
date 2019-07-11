@@ -29,5 +29,26 @@ with open(args.new_file, "r") as myfile:
         if result:
             k_mer_leng.append(float(result.group(5))) #isolates only the k_mer_leng and makes it a float - otherwise it loads in as a string
             k_mer_cover.append(float(result.group(7))) #isolates only the k_mer_cover
+kmer_length = 49
+#K-mer length: For the value of k chosen in the assembly, a measure of how many k-mers overlap (by 1 bp each overlap) to give this length
+#want to convert k_mer_leng to actual physical length of the contig
+#to convert do kmer_length-1 + k_mer_leng[index]
+index1=0
+add_on = kmer_length - 1
+for i in k_mer_leng:
+    k_mer_leng[index1]=i+add_on
+    index1+=1
+#now k_mer_leng list has the actual lengths of my contigs!
 
-print(k_mer_leng)
+#contig number is just the number of reads in my fasta file
+contig_count = len(k_mer_leng)
+#max contig lengths
+max_contig_length = max(k_mer_leng)
+#Mean contig length
+mean_contig_length = sum(k_mer_leng)/contig_count
+#total length of genome across all contigs
+total_genome_length = sum(k_mer_leng)
+print("the max contig length is", max_contig_length)
+print("there are", contig_count, "contigs")
+print("the mean contig length is", mean_contig_length)
+print("the total sum of the genome is", total_genome_length)
