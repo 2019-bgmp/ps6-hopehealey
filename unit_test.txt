@@ -1,0 +1,22 @@
+Expected Results
+
+Expected contig_bins
+100 - 1
+500 - 2
+800 - 1
+1000 -1
+
+Expected mean_contig_length
+628
+
+contig_count
+5
+
+max contig lengths
+1048
+
+total genome length
+3140
+
+coverage
+1
