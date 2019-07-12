@@ -49,8 +49,13 @@ mean_contig_length = sum(k_mer_leng)/contig_count
 #total length of genome across all contigs
 total_genome_length = sum(k_mer_leng)
 #expected coverage
-cover = (contig_count*mean_contig_length)/total_genome_length
-
+coverage_array = []
+index2=0
+for i in k_mer_leng:
+    cov = (k_mer_cover[index2] * i) / (i - kmer_length + 1)
+    coverage_array.append(cov)
+    index2+=1
+mean_depth_coverage = sum(coverage_array)/contig_count
 #calculating the N50
 #need to sort my k_ner_leng list so the biggest value is first
 k_mer_leng.sort(reverse= True)
@@ -80,8 +85,7 @@ import operator
 #sorted my kmers - it became a tuple after sorting it
 sort_contig_bins = sorted(contig_bins.items(), key=operator.itemgetter(0), reverse=False)
 
-print("# Kmer Frequency", "\t", "Number of Kmers in this Category")
-print("my coverage is", cover)
+print("my coverage is", mean_depth_coverage)
 print("the max contig length is", max_contig_length)
 print("there are", contig_count, "contigs")
 print("the mean contig length is", mean_contig_length)
