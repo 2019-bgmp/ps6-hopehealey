@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 # file = "contigs.fa"
 #
 #setting up argparse -
@@ -48,7 +48,47 @@ max_contig_length = max(k_mer_leng)
 mean_contig_length = sum(k_mer_leng)/contig_count
 #total length of genome across all contigs
 total_genome_length = sum(k_mer_leng)
+#expected coverage
+cover = (contig_count*mean_contig_length)/total_genome_length
+
+#calculating the N50
+#need to sort my k_ner_leng list so the biggest value is first
+k_mer_leng.sort(reverse= True)
+#Need to know where 50% of the assembly is
+Half_genome_leng = total_genome_length / 2
+#the N50 is at the spot where the mysum value goes from being less than half the genome length to being greater than it
+mysum=0
+for i in k_mer_leng:
+    mysum+=i
+    if mysum < Half_genome_leng:
+        pass
+    #breaks the loop as soon as the N50 is found
+    elif mysum > Half_genome_leng:
+        N50 = i
+        break
+#Putting my contigs in dictionaries based on bins
+contig_bins = {}
+for i in k_mer_leng:
+    #rounds the number down
+    bin_id = round(i, -2)
+    if bin_id in contig_bins:
+        contig_bins[bin_id]+=1
+    elif bin_id not in contig_bins:
+        contig_bins[bin_id]=1
+#sorting my dictionary and make it so I can print it out
+import operator
+#sorted my kmers - it became a tuple after sorting it
+sort_contig_bins = sorted(contig_bins.items(), key=operator.itemgetter(0), reverse=False)
+
+print("# Kmer Frequency", "\t", "Number of Kmers in this Category")
+print("my coverage is", cover)
 print("the max contig length is", max_contig_length)
 print("there are", contig_count, "contigs")
 print("the mean contig length is", mean_contig_length)
 print("the total sum of the genome is", total_genome_length)
+print('the N50 is', N50)
+print("# Contig Length", "\t", "Number of Contigs in this Category")
+index=0
+for i in sort_contig_bins:
+    print(sort_contig_bins[index][0], "\t", sort_contig_bins[index][1])
+    index+=1
