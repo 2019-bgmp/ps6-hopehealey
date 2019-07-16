@@ -48,7 +48,7 @@ max_contig_length = max(k_mer_leng)
 mean_contig_length = sum(k_mer_leng)/contig_count
 #total length of genome across all contigs
 total_genome_length = sum(k_mer_leng)
-#expected coverage
+#mean_depth_coverage 
 coverage_array = []
 index2=0
 for i in k_mer_leng:
