@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+#SBATCH --account=bgmp          ### SLURM account which will be charged for the Job
+#SBATCH --partition=bgmp        ### Partition (like a queue in PBS)
+#SBATCH --job-name=PS6_velveth_try1      ### Job Name
+#SBATCH --output=PS6_velveth_try1.out         ### File in which to store job output
+#SBATCH --error=PS6_veleveth.err          ### File in which to store job error messages
+#SBATCH --time=0-01:00:00       ### Wall clock time limit in Days-HH:MM:SS
+#SBATCH --nodes=1               ### Node count required for the job
+#SBATCH --ntasks-per-node=1     ### Nuber of tasks to be launched per Node
+#SBATCH --cpus-per-task=1       ### Number of cpus (cores) per task
+conda activate bgmp_py3
+/usr/bin/time -v velveth /home/hhealey/bgmp/PS6/Velveth_Kmer_49/ 49 -fastq -shortPaired /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_1 /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_2 -short /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq.unmatched

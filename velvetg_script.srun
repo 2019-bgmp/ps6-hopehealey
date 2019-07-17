@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --account=bgmp          ### SLURM account which will be charged for the job
+#SBATCH --partition=bgmp        ### Partition (like a queue in PBS)
+#SBATCH --job-name=Velvetg      ### Job Name
+#SBATCH --output=Velvetg.out         ### File in which to store job output
+#SBATCH --error=Velvetg.err          ### File in which to store job error messages
+#SBATCH --time=0-00:45:00       ### Wall clock time limit in Days-HH:MM:SS
+#SBATCH --nodes=1               ### Node count required for the job
+#SBATCH --ntasks-per-node=1     ### Nuber of tasks to be launched per Node
+#SBATCH --cpus-per-task=1       ### Number of cpus (cores) per task
+conda activate bgmp_py3
+/usr/bin/time -v velvetg Velveth_Kmer_49
