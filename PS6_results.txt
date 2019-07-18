@@ -418,3 +418,13 @@ the N50 is 1229.0
 Part 3 Questions:
 1) Comparing the three different kmer sizes, the smaller the Kmer size the larger the proportion of contigs that only fell in the 100bp category.
 The largeset kmer size (49) had more contigs that fell into bins greater than 100bp than the other two.
+The coverage for a kmer size of 31 was higher than that of a kmer size of 41 and 49.
+The kmer size of 49 had the largest maximum contig size out of the three kmer sizes.
+Kmer size of 31 had the most contigs, while a kmer size of 49 had the least number of contigs.
+The N50 value was the highest in the kmer size of 49 run and lowest in the kmer size of 31 run.
+The mean contig length is the highest in the run with a kmer size of 49, and lowest in the sample with a kmer size of 31.
+The total sum of the genome was the smallest with a kmer size of 49, and largest with the kmer size of 31.
+
+The kmer size of 31 had the smallest distribution of contigs, most were in the smallest bins and there were very few in bins larger than 100bp.
+The kmer size of 41 had more contigs in the 200bp bin than kmer size of 31, but still most of contigs are in the 100bp bin.
+The kmer size of 49 still had the most contigs in the 100bp bin, but it had the most spread out distribution of contig sizes.
