@@ -9,4 +9,4 @@
 #SBATCH --ntasks-per-node=1     ### Nuber of tasks to be launched per Node
 #SBATCH --cpus-per-task=1       ### Number of cpus (cores) per task
 conda activate bgmp_py3
-/usr/bin/time -v velvetg Velveth_Kmer_49
+/usr/bin/time -v velvetg Velveth_Kmer_49 -exp_cov 36.96 -ins_length 76.79 
