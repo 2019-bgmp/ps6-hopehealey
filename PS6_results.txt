@@ -428,3 +428,12 @@ The total sum of the genome was the smallest with a kmer size of 49, and largest
 The kmer size of 31 had the smallest distribution of contigs, most were in the smallest bins and there were very few in bins larger than 100bp.
 The kmer size of 41 had more contigs in the 200bp bin than kmer size of 31, but still most of contigs are in the 100bp bin.
 The kmer size of 49 still had the most contigs in the 100bp bin, but it had the most spread out distribution of contig sizes.
+
+2) When a coverage cutoff of 20 was added, the genome size further shrunk, the N50 value increased, the genome coverage increased, and the mean contig length increased.
+Additionally, with a coverage cutoff of 20, the largest contig was thousands of bp larger than the run with just a kmer coverage of 49.
+With a coverage of 60, the genome coverage was even higher than with a coverage cutoff of 20. Furthermore, there much fewer contigs in the assembly,
+the genome size was smaller, and the N50 was larger than the assembly with a coverage cutoff of 20. The auto coverage had a smaller genome coverage value than the coverage of 60,
+In comparison to a coverage of 20 and 60, the auto coverage had the largest maximum contig size; however, it had the smallest N50 value of the three.
+Also, the auto coverage had the largest number of contigs out of the three.
+
+When the coverage cutoff is set to auto, it is half the length weighted median contig coverage depth.
