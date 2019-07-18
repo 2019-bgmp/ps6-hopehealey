@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # file = "contigs.fa"
-#
+
 #setting up argparse -
 import argparse
 
@@ -97,5 +97,5 @@ with open(args.new_file, "w") as my_file:
     index=0
     for i in sort_contig_bins:
         print(sort_contig_bins[index][0], "\t", sort_contig_bins[index][1])
-        my_file.write(str(sort_contig_bins[index][0]) + "\t" + str(sort_contig_bins[index][1]))
+        my_file.write(str(sort_contig_bins[index][0]) + "\t" + str(sort_contig_bins[index][1]) + "\n")
         index+=1
