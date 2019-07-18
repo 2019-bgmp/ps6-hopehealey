@@ -437,3 +437,7 @@ In comparison to a coverage of 20 and 60, the auto coverage had the largest maxi
 Also, the auto coverage had the largest number of contigs out of the three.
 
 When the coverage cutoff is set to auto, it is half the length weighted median contig coverage depth.
+
+3) When a minimum contig length was set, there was a much smaller range in contig length. It had a smaller maximum contig length than the one with the auto coverage with no minimum contig size.
+With the minimum contig length set, the N50 value was smaller than when the minimum contig length was not set. When the minimum contig length was set there was fewer contigs than when there was
+no minimum contig length.
