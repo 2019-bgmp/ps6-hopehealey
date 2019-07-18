@@ -1,0 +1,19 @@
+----------------RESULTS FROM PS6---------------------------
+1) Calculations about genome
+- genome size: 2000000 bp
+- average read length:76.79 bp is average read length
+- coverage: 98.59 reads
+- Kmer coverage for kmer size 31: 60.07 kmer coverage
+- Kmer coverage for kmer size 41: 47.23 kmer coverage
+- Kmer coverage for kmer size 49: 36.96 kmer coverage
+(all calculations are explained in my lab notes PS6 file in my notebook rep)
+
+2) Results from velvet runs (usr/bin/time info from each run in notebook)
+-Kmer size 31
+
+-Kmer size 41
+-Kmer size 49
+-Kmer size 49 cov 20
+-Kmer size 49 cov 60
+-Kmer size 49 cov auto
+-Kmer size 49 cov auto min contig 500
