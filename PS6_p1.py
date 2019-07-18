@@ -113,9 +113,6 @@ with open(args.new_file, "w") as my_file:
     for i in sort_contig_bins:
         #prints out the distribution to standard out
         print(sort_contig_bins[index][0], "\t", sort_contig_bins[index][1])
-<<<<<<< HEAD
-=======
         #adds the distrbution to my new file, separates them by tabs and adds a new line after each line
->>>>>>> 078abf9b1b117650a0b5f531df5324cae9657742
         my_file.write(str(sort_contig_bins[index][0]) + "\t" + str(sort_contig_bins[index][1]) + "\n")
         index+=1
