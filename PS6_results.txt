@@ -436,6 +436,7 @@ the genome size was smaller, and the N50 was larger than the assembly with a cov
 In comparison to a coverage of 20 and 60, the auto coverage had the largest maximum contig size; however, it had the smallest N50 value of the three.
 Also, the auto coverage had the largest number of contigs out of the three.
 
+Adding a coverage cutoff trims the number of paths on a de bruijn graph.
 When the coverage cutoff is set to auto, it is half the length weighted median contig coverage depth.
 
 3) When a minimum contig length was set, there was a much smaller range in contig length. It had a smaller maximum contig length than the one with the auto coverage with no minimum contig size.
